@@ -1,6 +1,10 @@
 package edu.sdccd.cisc191;
 
-abstract class Shape {
+abstract class Shape implements Measurable, Comparable<Shape> {
+    /*
+    Implement Mesurable here to not need to in each subclass
+    Implement Comparable to allow a class to define how it can be ordered and sorted via compareTo
+    */
     String name;
 
     Shape(String name){
@@ -27,5 +31,10 @@ abstract class Shape {
 
     public String getName() {
         return name;
+    }
+
+    @Override
+    public int compareTo(Shape other) { // Have to override compareTo due to implementation of Comparable
+        return this.getName().compareTo(other.getName());
     }
 }
