@@ -1,4 +1,5 @@
 package edu.sdccd.cisc191;
+import java.util.Objects;
 
 class Rectangle extends Shape implements Measurable {
 
@@ -38,6 +39,10 @@ class Rectangle extends Shape implements Measurable {
                 name.equals(other.name);
     }
 
+    @Override
+    public int hashCode() {
+        return Objects.hash(name, width, height);
+    }
     @Override
     public String toString(){
         return "Rectangle(" + name + ", " + width + "x" + height + ")";
