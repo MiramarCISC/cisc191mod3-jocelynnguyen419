@@ -1,6 +1,6 @@
 package edu.sdccd.cisc191;
 
-class Triangle extends Shape implements Measurable {
+class Triangle extends Shape {
 
     private double a, b, c;
 
@@ -11,7 +11,7 @@ class Triangle extends Shape implements Measurable {
             throw new IllegalArgumentException("Sides must be positive");
         }
 
-        if(a + b <= c || a + c <= b || b + c <= a){
+        if(a + b <= c || a + c <= b || b + c <= a){ // Didn't think about doing this, well done
             throw new IllegalArgumentException("Invalid triangle");
         }
 
@@ -41,11 +41,8 @@ class Triangle extends Shape implements Measurable {
         return Double.compare(a, other.a) == 0 &&
                 Double.compare(b, other.b) == 0 &&
                 Double.compare(c, other.c) == 0 &&
-                name.equals(other.name);
+                name.equals(other.name); // Check Circle for suggested changes
     }
 
-    @Override
-    public String toString(){
-        return "Triangle(" + name + ")";
-    }
+    // Removed toString
 }

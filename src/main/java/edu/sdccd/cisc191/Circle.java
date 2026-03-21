@@ -1,6 +1,6 @@
 package edu.sdccd.cisc191;
 
-class Circle extends Shape implements Measurable {
+class Circle extends Shape {
 
     private double radius;
 
@@ -30,12 +30,9 @@ class Circle extends Shape implements Measurable {
         if(!(obj instanceof Circle)) return false;
 
         Circle other = (Circle) obj;
-        return Double.compare(radius, other.radius) == 0 &&
-                name.equals(other.name);
+        return getName().equals(other.getName()) && Double.compare(radius, other.radius) == 0;
+        // Better to use the getter to prevent compile-time error if name is private
     }
 
-    @Override
-    public String toString(){
-        return "Circle(" + name + ", r=" + radius + ")";
-    }
+    // Removed toString due to method in Shape
 }

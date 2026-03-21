@@ -1,6 +1,6 @@
 package edu.sdccd.cisc191;
 
-class Rectangle extends Shape implements Measurable {
+class Rectangle extends Shape {
 
     private double width;
     private double height;
@@ -35,11 +35,8 @@ class Rectangle extends Shape implements Measurable {
 
         return Double.compare(width, other.width) == 0 &&
                 Double.compare(height, other.height) == 0 &&
-                name.equals(other.name);
+                name.equals(other.name); // See Circle for suggested changes here
     }
 
-    @Override
-    public String toString(){
-        return "Rectangle(" + name + ", " + width + "x" + height + ")";
-    }
+    // Removed toString
 }
