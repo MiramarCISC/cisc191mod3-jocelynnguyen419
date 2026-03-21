@@ -1,5 +1,5 @@
 package edu.sdccd.cisc191;
-
+import java.util.Objects;
 class Circle extends Shape implements Measurable {
 
     private double radius;
@@ -37,5 +37,10 @@ class Circle extends Shape implements Measurable {
     @Override
     public String toString(){
         return "Circle(" + name + ", r=" + radius + ")";
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(name, radius);
     }
 }

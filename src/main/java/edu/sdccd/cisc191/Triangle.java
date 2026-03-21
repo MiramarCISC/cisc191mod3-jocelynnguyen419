@@ -1,5 +1,6 @@
 package edu.sdccd.cisc191;
 
+import java.util.Objects;
 class Triangle extends Shape implements Measurable {
 
     private double a, b, c;
@@ -42,6 +43,11 @@ class Triangle extends Shape implements Measurable {
                 Double.compare(b, other.b) == 0 &&
                 Double.compare(c, other.c) == 0 &&
                 name.equals(other.name);
+    }
+    //
+    @Override
+    public int hashCode() {
+        return Objects.hash(name, a, b, c);
     }
 
     @Override
